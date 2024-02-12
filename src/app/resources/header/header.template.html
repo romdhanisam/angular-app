@@ -1,9 +1,13 @@
+<button style="float: right" mat-icon-button (click)="changeTheme(isDarkMode ? 'Light': 'Dark')">
+    <mat-icon>{{ isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+</button>
 <mat-toolbar>
     <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
     <span class="app-name">angular-app Demo</span>
     <span class="spacer"></span>
-    <button mat-icon-button (click)="changeTheme(isDarkMode ? 'Light': 'Dark')">
-        <mat-icon>{{ isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+    <button mat-button *ngIf="idToken" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
     </button>
 </mat-toolbar>
 <mat-toolbar *ngIf="!isProdMode" class="ot-debug-toolbar" [ngClass]="getDebugClass()">
@@ -22,6 +26,12 @@
             Demo service
         </a>
         <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+        <a mat-list-item
+           [routerLink]="['profil']"
+           queryParamsHandling="preserve">
+            Profil
+        </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

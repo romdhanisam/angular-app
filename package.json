@@ -51,6 +51,8 @@
     "@angular/service-worker": "16.2.7",
     "@ngrx/store": "16.0.0",
     "@ngrx/store-devtools": "16.0.0",
+    "angular-oauth2-oidc": "13.0.1",
+    "angular-oauth2-oidc-jwks": "13.0.1",
     "bootstrap": "5.0.0",
     "font-awesome": "4.7.0",
     "rxjs": "~7.8.0",

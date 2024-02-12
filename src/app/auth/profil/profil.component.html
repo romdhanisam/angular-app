@@ -1,0 +1,15 @@
+<mat-card class="mat-elevation-z2" *ngIf="idToken">
+    <mat-card-header>
+        <mat-icon mat-card-avatar>perm_identity</mat-icon>
+        <mat-card-title>{{fullName}}</mat-card-title>
+        <mat-card-subtitle>E-mail: {{email}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        hasValidAccessToken: {{hasValidAccessToken()}}
+        <br/>
+        hasValidToken: {{hasValidToken()}}
+        <br/>
+        <pre> idTokenExpiration : {{idTokenExpiration | date : "EEEE YYYY-MM-dd hh:mm:ss.SSS OOOO"}}</pre>
+        <pre> accessTokenExpiration : {{accessTokenExpiration | date : "EEEE YYYY-MM-dd hh:mm:ss.SSS OOOO"}}</pre>
+    </mat-card-content>
+</mat-card>

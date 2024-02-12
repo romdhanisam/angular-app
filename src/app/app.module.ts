@@ -10,6 +10,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { themeReducer } from "@Store/reducers/theme-reducer";
+import {AuthModule} from "./auth/auth.module";
+import ProfilComponent from "./auth/profil/profil.component";
 
 export const routes: Routes = [
   {
@@ -18,16 +20,22 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/default',
+        redirectTo: '/home',
         pathMatch: 'full'
       },
       {
-        path: 'default',
-        loadComponent: () => import('./resources/header/header.component')
+        path: 'home',
+        loadComponent: () => import('./resources/header/header.component'),
+        children: [
+          {
+            path: 'profil',
+            component: ProfilComponent
+          }
+        ]
       }
     ]
   },
-  { path: '**', redirectTo: 'default' }
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
@@ -47,7 +55,7 @@ export const routes: Routes = [
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-
+    AuthModule
     ],
   providers: [],
   bootstrap: [AppComponent]

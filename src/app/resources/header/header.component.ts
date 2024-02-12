@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, ViewChild} from '@angular/core';
 import {MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
 import {BreakpointObserver} from "@angular/cdk/layout";
 import {Store} from "@ngrx/store";
@@ -12,6 +12,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {environment} from "../../../environments/environment";
+import {OAuthService} from "angular-oauth2-oidc";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'ot-header',
@@ -25,14 +27,18 @@ import {environment} from "../../../environments/environment";
   templateUrl: 'header.template.html',
   styleUrls: ['header.style.scss']
 })
-export default class HeaderComponent implements AfterViewInit{
+export default class HeaderComponent implements AfterViewInit, OnDestroy {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
   env: string;
   isProdMode: boolean;
   isDarkMode = false;
+
+  subscription: Subscription
+
   constructor(private readonly store: Store<AppTheme>,
-              private observer: BreakpointObserver
+              private observer: BreakpointObserver,
+              private oauthService: OAuthService
   ) {
     this.env = environment.env;
     this.isProdMode = environment.production;
@@ -55,7 +61,7 @@ export default class HeaderComponent implements AfterViewInit{
   }
 
   ngAfterViewInit() {
-    this.observer.observe(["(max-width: 800px)"]).subscribe((res) => {
+    this.subscription = this.observer.observe(["(max-width: 800px)"]).subscribe((res) => {
       if (res.matches) {
         this.sidenav.mode = "over";
         this.sidenav.close();
@@ -64,6 +70,18 @@ export default class HeaderComponent implements AfterViewInit{
         this.sidenav.open();
       }
     });
+  }
+
+  get idToken(): string {
+    return this.oauthService.getIdToken();
+  }
+
+  async logout() {
+   await this.oauthService.revokeTokenAndLogout();
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 }
