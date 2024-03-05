@@ -1,6 +1,3 @@
- // // / <reference lib="webworker" />
-// // https://github.com/fleureyf/angular-web-workers/tree/f17b3aa4a0cf7c293c8328f67f664886228f850e/src/app/background-tasks/workers
-// // https://web.dev/module-workers/
 
 import {IWebWorkerService} from './web-worker.interface';
 

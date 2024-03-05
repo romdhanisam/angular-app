@@ -16,7 +16,6 @@ const initialState : ITemplate[] = [{
 }]
 
 export function projectReducer (state: ITemplate[] = initialState, action: Action): ITemplate[] {
-    // console.log(action.type, state);
     switch(action.type) {
       case ADD_PROJECT:
         const newProject: ITemplate = {
