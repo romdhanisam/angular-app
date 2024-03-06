@@ -15,26 +15,27 @@ export interface IBASE  {
   deletingDate: Date | string;
 }
 
-export interface IVersion {
-  id: string;
-  text: string
-}
-
 export interface ITemplate extends IBASE {
   id: string;
   name: string;
-  version: IVersion;
+  version: {
+    id: string;
+    text: string
+  };
 }
 
 export class Template implements ITemplate {
   id: string;
   name: string;
-  version: IVersion;
+  version: {
+    id: string;
+    text: string
+  };
   kind: TKIND = TKIND.PROJECT;
   creationDate: Date | string;
   updatingDate: Date | string;
   deletingDate: Date | string;
-    constructor(name?: string, version?: IVersion,
+    constructor(name?: string, version?: { id: string; text: string },
                 id?: string ,creationDate?: any, updatingDate?: any) {
       this.id = id;
       this.name = name;

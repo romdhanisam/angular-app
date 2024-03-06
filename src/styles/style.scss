@@ -29,9 +29,15 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
   $foreground-palette: map.get($theme, foreground);
   $background-palette: map.get($theme, background);
   $background: theming.mat-color($background-palette, background);
+  $card-background: theming.mat-color($background-palette, card);
+  $card-foreground: theming.mat-color($foreground-palette, card);
+  $muted: theming.mat-color($foreground-palette, secondary-text);
+  $muted2: theming.mat-color($foreground-palette, secondary-text);
+  $muted-light: theming.mat-color($foreground-palette, disabled);
 
   .spacer {
     flex: 1 1 auto;
+    justify-content: space-between;
   }
   .ot-toolbar-success {
     background-color: color.adjust(map.get($colors, indicator-success), $lightness: 20%);
@@ -39,11 +45,13 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
   .ot-toolbar-warning {
     background-color: color.adjust(map.get($colors, indicator-warning), $lightness: 10%);
   }
-  .notify-viewport {
-    height: 350px;
-    width: 800px;
-    border: 2px solid map.get($foreground-palette, secondary-text);
-    background-color: $background;
+
+  .mat-mdc-nav-list .mat-mdc-list-item {
+      border: 2mm solid $card-background;
+  }
+
+  .ot-nav-item-active {
+    border: 2mm;
   }
 
   mat-sidenav-container {
@@ -195,7 +203,7 @@ $angular-app-dark-theme: mat.define-dark-theme((
  * |   |-- _home.scss        # page/view specific stylesheet
  * |   ...
  * |
- * `-- style.scss            # primary Sass file
+ * `-- main.style.scss            # primary Sass file
  *
  */
 

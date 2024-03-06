@@ -1,22 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
-import HeaderComponent from "./header.component";
+import LayoutComponent from "./layout.component";
 import {RouterTestingModule} from "@angular/router/testing";
 import {StoreModule} from "@ngrx/store";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
-import {BreakpointObserver} from "@angular/cdk/layout";
-import {of} from "rxjs";
 
 describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const breakpointObserverMock: jest.Mocked<BreakpointObserver> = {
-    observe: jest.fn()
-  };
-  breakpointObserverMock.observe.mockReturnValue(of());
+  let component: LayoutComponent;
+  let fixture: ComponentFixture<LayoutComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -24,9 +16,9 @@ describe('HeaderComponent', () => {
         NoopAnimationsModule,
         StoreModule.forRoot()
       ],
-      providers: [{provide: BreakpointObserver, useValue: breakpointObserverMock}]
+      providers: []
     }).compileComponents();
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(LayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

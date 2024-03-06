@@ -1,0 +1,65 @@
+<mat-toolbar>
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <span class="app-name">angular-app Demo</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="changeTheme(isDarkMode ? 'Light': 'Dark')">
+        <mat-icon>{{ isDarkMode ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-toolbar *ngIf="!isProdMode" class="ot-debug-toolbar" [ngClass]="getDebugClass()">
+  <mat-toolbar-row>
+    <span>Test environment ({{env}})</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav class="mat-elevation-z2" opened="true" (openedStart)="openedStart()">
+        <mat-nav-list class="nav-list-container">
+            <a mat-list-item
+               [routerLink]="['main']"
+               disableRipple
+               [routerLinkActive]="['mdc-list-item--activated', 'ot-nav-item-active']"
+               queryParamsHandling="preserve">
+                Item main
+            </a>
+            <mat-divider/>
+            <a mat-list-item
+               [routerLink]="['about']"
+               disableRipple
+               [routerLinkActive]="['mdc-list-item--activated', 'ot-nav-item-active']"
+               queryParamsHandling="preserve">
+                About
+            </a>
+<!--            [routerLinkActive]="['ot-nav-item-active']"-->
+
+<!--            <mat-nav-list class="nav-list-settings">-->
+<!--                <mat-divider/>-->
+<!--                <a mat-list-item-->
+<!--                   [routerLink]="['account']"-->
+<!--                   disableRipple-->
+<!--                   [routerLinkActive]="['ot-nav-item-active']"-->
+<!--                   queryParamsHandling="preserve">-->
+<!--                    My account-->
+<!--                </a>-->
+<!--            </mat-nav-list>-->
+        </mat-nav-list>
+    </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<footer>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <p> &copy; <a href="https://github.com/romdhanisam/angular-app#readme" target="_blank">angular-app</a> 2024</p>
+            <span class="spacer"></span>
+            <p> Crafted with ❤️</p>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</footer>
+
+
+

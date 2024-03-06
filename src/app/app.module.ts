@@ -10,24 +10,19 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { themeReducer } from "@Store/reducers/theme-reducer";
+import LayoutComponent from "@Resource/layout/layout.component";
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: AppComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: '/default',
-        pathMatch: 'full'
+  { path: '', component: LayoutComponent, children: [
+      { path: 'main',
+        loadComponent: () => import('@Resource/core/main.component'),
       },
-      {
-        path: 'default',
-        loadComponent: () => import('./resources/header/header.component')
-      }
+      { path: 'about',
+        loadComponent: () => import('@Global/foundation/about.component'),
+      },
+      {path: '', redirectTo: 'main', pathMatch: 'full'},
     ]
-  },
-  { path: '**', redirectTo: 'default' }
+  }
 ];
 
 @NgModule({

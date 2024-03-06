@@ -1,39 +1,38 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {Component, ViewChild} from "@angular/core";
 import {MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
-import {BreakpointObserver} from "@angular/cdk/layout";
 import {Store} from "@ngrx/store";
 import {AppTheme, THEMES, UpdateTheme} from "@Store/reducers/theme-reducer";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
-import {AboutComponent} from "@Resource/header/about/component";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatListModule} from "@angular/material/list";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {environment} from "../../../environments/environment";
+import {MatRippleModule} from "@angular/material/core";
+
 
 @Component({
-  selector: 'ot-header',
+  selector: 'ot-layout',
   standalone: true,
   imports: [
     CommonModule,
     RouterModule,
     //Mat
     MatSidenavModule,MatDividerModule,MatListModule,MatToolbarModule,MatIconModule,MatButtonModule,
-    AboutComponent],
-  templateUrl: 'header.template.html',
-  styleUrls: ['header.style.scss']
+      MatRippleModule
+  ],
+  templateUrl: 'layout.template.html',
+  styleUrls: ['layout.style.scss']
 })
-export default class HeaderComponent implements AfterViewInit{
+export default class LayoutComponent {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
   env: string;
   isProdMode: boolean;
   isDarkMode = false;
-  constructor(private readonly store: Store<AppTheme>,
-              private observer: BreakpointObserver
-  ) {
+  constructor(private readonly store: Store<AppTheme>) {
     this.env = environment.env;
     this.isProdMode = environment.production;
   }
@@ -54,16 +53,10 @@ export default class HeaderComponent implements AfterViewInit{
     }
   }
 
-  ngAfterViewInit() {
-    this.observer.observe(["(max-width: 800px)"]).subscribe((res) => {
-      if (res.matches) {
-        this.sidenav.mode = "over";
-        this.sidenav.close();
-      } else {
-        this.sidenav.mode = "side";
-        this.sidenav.open();
-      }
-    });
+  openedStart() {
+    this.sidenav.mode = "side";
+    this.sidenav.open();
   }
+
 
 }

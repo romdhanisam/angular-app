@@ -3,10 +3,9 @@ import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 
 @Component({
-  selector: 'template-main',
+  selector: 'ot-main',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.style.scss'],
+  template: `<router-outlet></router-outlet>`
 })
 export default class MainComponent {}

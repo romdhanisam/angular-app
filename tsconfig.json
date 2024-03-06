@@ -22,30 +22,12 @@
       "dom"
     ],
     "paths": {
-      "@CompoLib": [
-        "./projects/compo/src/public-api"
-      ],
-      "@Global/*": [
-        "src/app/global/*"
-      ],
-      "@Foundation/*": [
-        "src/app/global/foundation/*"
-      ],
-      "@Commons/*": [
-        "src/app/commons/*"
-      ],
-      "@Shared/*": [
-        "src/app/shared/*"
-      ],
-      "@Resource/*": [
-        "src/app/resources/*"
-      ],
-      "@Store/*": [
-        "src/app/store/*"
-      ],
-      "@Worker/*": [
-        "src/app/workers/*"
-      ]
+      "@CompoLib": ["./projects/compo/src/public-api"],
+      "@Global/*": ["src/app/global/*"],
+      "@Shared/*": ["src/app/shared/*"],
+      "@Resource/*": ["src/app/resources/*"],
+      "@Store/*": ["src/app/store/*"],
+      "@Worker/*": ["src/app/workers/*"]
     }
   },
   "angularCompilerOptions": {
