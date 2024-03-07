@@ -22,7 +22,9 @@ export const routes: Routes = [
       },
       {path: '', redirectTo: 'main', pathMatch: 'full'},
     ]
-  }
+  },
+    {path: '', redirectTo: 'main', pathMatch: 'full'},
+    {path: '**', redirectTo: 'main'},
 ];
 
 @NgModule({
@@ -33,18 +35,19 @@ export const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
     StoreModule.forRoot({ projects: projectReducer, theme: themeReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
+    // ServiceWorkerModule.register('ngsw-worker.js', {
+    //   enabled: environment.production,
+    //   // Register the ServiceWorker as soon as the application is stable
+    //   // or after 30 seconds (whichever comes first).
+    //   registrationStrategy: 'registerWhenStable:30000'
+    // }),
 
     ],
   providers: [],
+  exports: [RouterModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
