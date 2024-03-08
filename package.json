@@ -33,7 +33,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:headed": "cypress run --headed",
-    "ci:start-server": "angular-http-server --path ./build -p 4200",
+    "ci:start-server": "angular-http-server --path ./dist -p 4200",
     "ci:cy-run": "start-server-and-test ci:start-server http://localhost:4200 cy:run"
   },
   "private": true,

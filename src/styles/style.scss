@@ -39,6 +39,7 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
     flex: 1 1 auto;
     justify-content: space-between;
   }
+
   .ot-toolbar-success {
     background-color: color.adjust(map.get($colors, indicator-success), $lightness: 20%);
   }
@@ -46,23 +47,24 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
     background-color: color.adjust(map.get($colors, indicator-warning), $lightness: 10%);
   }
 
-  .mat-mdc-nav-list .mat-mdc-list-item {
-      border: 2mm solid $card-background;
-  }
-
-  .ot-nav-item-active {
-    border: 2mm;
-  }
-
   mat-sidenav-container {
-    height: calc(100vh - 65px);
+    height: calc(100vh - 130px);
   }
+
   mat-sidenav {
     width: $baseline-grid * 30;
     border-right: none;
     border-radius: $baseline-grid;
     padding: $baseline-grid * 2;
     text-align: center;
+  }
+
+  .mat-mdc-nav-list .mat-mdc-list-item {
+    border: 1.5mm solid $card-background;
+  }
+
+  .ot-nav-item-active {
+    border: 1.5mm;
   }
 }
 
@@ -101,7 +103,6 @@ $angular-app-dark-theme: mat.define-dark-theme((
 .angular-app-dark-theme {
   @include mat.core-theme($angular-app-dark-theme);
   @include mat.all-component-colors($angular-app-dark-theme);
- // @include mat.button-theme($angular-app-dark-theme);
   @include mat.sidenav-theme($angular-app-dark-theme);
   @include angular-app-theme($angular-app-dark-theme, $colors-dark);
 }
@@ -109,7 +110,6 @@ $angular-app-dark-theme: mat.define-dark-theme((
 .angular-app-light-theme {
   @include mat.core-theme($angular-app-light-theme);
   @include mat.all-component-colors($angular-app-light-theme);
-  // @include mat.button-theme($angular-app-light-theme);
   @include mat.sidenav-theme($angular-app-light-theme);
   @include angular-app-theme($angular-app-light-theme, $colors-light);
 }

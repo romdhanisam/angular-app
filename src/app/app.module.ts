@@ -28,9 +28,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -38,16 +36,8 @@ export const routes: Routes = [
     RouterModule.forRoot(routes, { useHash: true }),
     StoreModule.forRoot({ projects: projectReducer, theme: themeReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    // ServiceWorkerModule.register('ngsw-worker.js', {
-    //   enabled: environment.production,
-    //   // Register the ServiceWorker as soon as the application is stable
-    //   // or after 30 seconds (whichever comes first).
-    //   registrationStrategy: 'registerWhenStable:30000'
-    // }),
-
-    ],
-  providers: [],
-  exports: [RouterModule],
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

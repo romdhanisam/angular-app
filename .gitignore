@@ -2,6 +2,7 @@
 
 /dist/
 /build/
+/docs/
 /coverage/
 /bazel-out
 /integration/bazel/bazel-*
