@@ -173,83 +173,26 @@
         }
       }
     },
-    "compo": {
+    "mylib": {
       "projectType": "library",
-      "root": "projects/compo",
-      "sourceRoot": "projects/compo/src",
+      "root": "projects/mylib",
+      "sourceRoot": "projects/mylib/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/compo/ng-package.json"
+            "project": "projects/mylib/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/compo/tsconfig.lib.prod.json"
+              "tsConfig": "projects/mylib/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/compo/tsconfig.lib.json"
+              "tsConfig": "projects/mylib/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/compo/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        },
-        "cypress-run": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "devServerTarget": "compo:serve",
-            "configFile": "projects/compo/cypress.config.js"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "compo:serve:production"
-            }
-          }
-        },
-        "cypress-open": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "watch": true,
-            "headless": false,
-            "configFile": "projects/compo/cypress.config.js"
-          }
-        },
-        "ct": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "devServerTarget": "compo:serve",
-            "watch": true,
-            "headless": false,
-            "testingType": "component"
-          },
-          "configurations": {
-            "development": {
-              "devServerTarget": "compo:serve:development"
-            }
-          }
-        },
-        "e2e": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "devServerTarget": "compo:serve",
-            "watch": true,
-            "headless": false
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "compo:serve:production"
-            }
-          }
         }
       }
     }

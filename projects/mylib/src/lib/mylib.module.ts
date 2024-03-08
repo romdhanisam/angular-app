@@ -1,20 +1,18 @@
 import {NgModule} from '@angular/core';
-import { CompoComponent } from './compo.component';
+import {MylibComponent} from './mylib.component';
 import {CommonModule} from "@angular/common";
 import {SharedModule} from "./shared.module";
 
 
 @NgModule({
-  declarations: [
-    CompoComponent,
-  ],
+  declarations: [MylibComponent],
   imports: [
     CommonModule,
     SharedModule,
   ],
   providers: [],
   exports: [
-    CompoComponent,
+    MylibComponent,
   ],
 })
-export class CompoModule { }
+export class MylibModule { }

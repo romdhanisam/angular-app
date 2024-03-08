@@ -48,7 +48,7 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
   }
 
   mat-sidenav-container {
-    height: calc(100vh - 130px);
+    height: calc(100vh - 65px);
   }
 
   mat-sidenav {
@@ -61,6 +61,7 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
 
   .mat-mdc-nav-list .mat-mdc-list-item {
     border: 1.5mm solid $card-background;
+    min-height: $baseline-grid * 6.5;
   }
 
   .ot-nav-item-active {

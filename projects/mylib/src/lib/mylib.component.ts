@@ -4,12 +4,12 @@ import { Component } from '@angular/core';
   selector: 'lib-compo',
   template: `
     <p>
-      compo works!
+      my lib works!
     </p>
   `,
   styles: [
   ]
 })
-export class CompoComponent {
+export class MylibComponent {
 
 }
