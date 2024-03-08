@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1709931458186,
+  "timestamp": 1709933087799,
   "index": "https://romdhanisam.github.io/angular-app/index.html",
   "assetGroups": [
     {
@@ -19,7 +19,7 @@
         "https://romdhanisam.github.io/angular-app/manifest.webmanifest",
         "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js",
         "https://romdhanisam.github.io/angular-app/runtime.481c7585805dc28b.js",
-        "https://romdhanisam.github.io/angular-app/styles.4eb64281817d7d4a.css"
+        "https://romdhanisam.github.io/angular-app/styles.5a45f6946a15b31a.css"
       ],
       "patterns": []
     },
@@ -66,12 +66,12 @@
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
-    "https://romdhanisam.github.io/angular-app/index.html": "c244f17c338e318f61c6736ba0e91bfd17d7382d",
+    "https://romdhanisam.github.io/angular-app/index.html": "170ce6254d66c4e151ee678a8ef75f2839ea942f",
     "https://romdhanisam.github.io/angular-app/main.b2f71b87e07ddd2e.js": "3f6c66c4bf619d1bad87586fce365e3ae3b05867",
     "https://romdhanisam.github.io/angular-app/manifest.webmanifest": "bd6beb5a3caa036b20f57a539ae50de9b05f67c5",
     "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js": "5020e0d2b76de8173745bf5261b720c20f709818",
     "https://romdhanisam.github.io/angular-app/runtime.481c7585805dc28b.js": "4529c293687e27312fd5b6e4aaf30ea3cec30f6e",
-    "https://romdhanisam.github.io/angular-app/styles.4eb64281817d7d4a.css": "9aa4d59e28cc3ce8ba32e4d9ba9794498ce5c4d1"
+    "https://romdhanisam.github.io/angular-app/styles.5a45f6946a15b31a.css": "96a2cb6aa76d3892f9c62f979b94a2c28ae1639f"
   },
   "navigationUrls": [
     {
