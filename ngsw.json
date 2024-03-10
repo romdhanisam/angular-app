@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1710113462310,
+  "timestamp": 1710113802518,
   "index": "https://romdhanisam.github.io/angular-app/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "https://romdhanisam.github.io/angular-app/97.2e2bfdea70f57cf6.js",
         "https://romdhanisam.github.io/angular-app/favicon.ico",
         "https://romdhanisam.github.io/angular-app/index.html",
-        "https://romdhanisam.github.io/angular-app/main.d6954cf04e263d7c.js",
+        "https://romdhanisam.github.io/angular-app/main.5306ce2867c07f66.js",
         "https://romdhanisam.github.io/angular-app/manifest.webmanifest",
         "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js",
         "https://romdhanisam.github.io/angular-app/runtime.481c7585805dc28b.js",
@@ -71,8 +71,8 @@
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
-    "https://romdhanisam.github.io/angular-app/index.html": "17d4039ce5467eede8330406bd5e20e57af1cc26",
-    "https://romdhanisam.github.io/angular-app/main.d6954cf04e263d7c.js": "3204868e3906f41a59b0ec483fdce1301ed9a2cd",
+    "https://romdhanisam.github.io/angular-app/index.html": "8b0c2665b8bb601323f51d1099fc2e4ee638967b",
+    "https://romdhanisam.github.io/angular-app/main.5306ce2867c07f66.js": "83081cbb5069a65a8da96eae7942256045e7e6da",
     "https://romdhanisam.github.io/angular-app/manifest.webmanifest": "bd6beb5a3caa036b20f57a539ae50de9b05f67c5",
     "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js": "5020e0d2b76de8173745bf5261b720c20f709818",
     "https://romdhanisam.github.io/angular-app/runtime.481c7585805dc28b.js": "4529c293687e27312fd5b6e4aaf30ea3cec30f6e",
