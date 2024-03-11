@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, DestroyRef, inject, OnInit} from '@angular/core';
 import {TTheme} from "@Global/model";
 import {MatSelectModule} from "@angular/material/select";
 import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
@@ -9,6 +9,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {FormControl, ReactiveFormsModule} from "@angular/forms";
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
 import {MatCardModule} from "@angular/material/card";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'ot-local-settings',
@@ -42,14 +43,20 @@ export default class LocalSettingsComponent implements OnInit{
   languageControl: FormControl;
   languages: string[] = [];
   systemLanguage = 'English';
+  private destroyRef = inject(DestroyRef);
   constructor(public readonly store: Store<AppTheme>) {}
 
   ngOnInit(): void {
-    this.themeControl = new FormControl<string>(this.systemTheme)
-    this.languageControl = new FormControl<string>(this.systemLanguage)
+    this.themeControl = new FormControl<string>('');
+    this.languageControl = new FormControl<string>(this.systemLanguage);
+    this.store.select("theme").pipe(takeUntilDestroyed(this.destroyRef)).subscribe(value => {
+      this.themeControl.setValue(value.displayName);
+    });
   }
 
-  changeTheme(newThemeName: string) {
-    this.store.dispatch(new UpdateTheme(this.themes.find(value => value.displayName == newThemeName)));
+  changeTheme() {
+    this.store.dispatch(new UpdateTheme(
+        this.themes.find(value =>
+            value.displayName != this.themeControl.value)));
   }
 }
