@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <span class="app-name">app</span>
+    <span class="spacer"></span>
+    {{"v"+version}}
+    <span class="spacer"></span>
+    <button mat-icon-button disableRipple (click)="dialogRef.close(true)">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-toolbar *ngIf="!isProdMode" class="ot-debug-toolbar" [ngClass]="getDebugClass()">
+    <mat-toolbar-row>
+        <span>Test environment ({{environment.env}})</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content>
+    <ot-nav-item/>
+</mat-dialog-content>

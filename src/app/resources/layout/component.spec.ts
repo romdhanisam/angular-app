@@ -1,12 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
-import LayoutComponent from "./layout.component";
 import {RouterTestingModule} from "@angular/router/testing";
-import {StoreModule} from "@ngrx/store";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import LayoutComponent from "./component";
 
-describe('HeaderComponent', () => {
+describe('LayoutComponent', () => {
   let component: LayoutComponent;
   let fixture: ComponentFixture<LayoutComponent>;
   beforeEach(async () => {
@@ -14,7 +13,6 @@ describe('HeaderComponent', () => {
       imports: [
         RouterTestingModule,
         NoopAnimationsModule,
-        StoreModule.forRoot()
       ],
       providers: []
     }).compileComponents();

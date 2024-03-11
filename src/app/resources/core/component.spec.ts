@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { expect } from '@jest/globals';
 
-import AboutProjectComponent from "./about.component";
+import Component from "./component";
 
-describe('AboutProjectComponent', () => {
-  let component: AboutProjectComponent;
-  let fixture: ComponentFixture<AboutProjectComponent>;
+describe('MainComponent', () => {
+  let component: Component;
+  let fixture: ComponentFixture<Component>;
   beforeEach(() => {
-    fixture = TestBed.createComponent(AboutProjectComponent);
+    fixture = TestBed.createComponent(Component);
     component = fixture.componentInstance;
     fixture.autoDetectChanges();
   });

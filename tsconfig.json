@@ -24,6 +24,7 @@
     "paths": {
       "@CompoLib": ["./projects/compo/src/public-api"],
       "@Global/*": ["src/app/global/*"],
+      "@Settings/*": ["src/app/settings/*"],
       "@Shared/*": ["src/app/shared/*"],
       "@Resource/*": ["src/app/resources/*"],
       "@Store/*": ["src/app/store/*"],

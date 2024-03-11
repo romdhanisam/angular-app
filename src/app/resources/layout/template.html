@@ -1,0 +1,38 @@
+<mat-toolbar>
+    <ng-container *ngIf="screenWidth$.asObservable() | async as width">
+        <button mat-icon-button id="nav-button" (click)=" width > 640 ? sidenav.toggle(): toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </ng-container>
+    <span class="app-name">angular-app Demo</span>
+</mat-toolbar>
+<mat-toolbar *ngIf="!isProdMode" class="ot-debug-toolbar" [ngClass]="getDebugClass()">
+    <mat-toolbar-row>
+        <span>Test environment ({{environment.env}})</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container >
+    <mat-sidenav class="mat-elevation-z2" [mode]="mode" [opened]="openSidenav" (openedStart)="openedStart()">
+        <ot-nav-item/>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<footer>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <p> &copy; <a href="https://github.com/romdhanisam/angular-app" target="_blank">angular-app</a> 2024</p>
+            <span class="spacer"></span>
+            <p> Crafted with ❤️</p>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</footer>
+
+
+
+

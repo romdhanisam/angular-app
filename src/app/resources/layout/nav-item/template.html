@@ -1,0 +1,33 @@
+<mat-nav-list class="nav-list-container">
+    <a id="main"
+       mat-list-item
+       [routerLink]="['main']"
+       disableRipple
+       [routerLinkActive]="['mdc-list-item--activated', 'ot-nav-item-active']"
+       queryParamsHandling="preserve">
+        Item main
+    </a>
+    <mat-divider/>
+    <a id="about"
+       mat-list-item
+       [routerLink]="['about']"
+       disableRipple
+       [routerLinkActive]="['mdc-list-item--activated', 'ot-nav-item-active']"
+       queryParamsHandling="preserve">
+        About
+    </a>
+    <mat-nav-list class="nav-list-settings">
+        <mat-divider/>
+        <a id="settings"
+           mat-list-item
+           [routerLink]="['settings']"
+           disableRipple
+           [routerLinkActive]="['mdc-list-item--activated', 'ot-nav-item-active']"
+           queryParamsHandling="preserve">
+            Settings
+        </a>
+    </mat-nav-list>
+</mat-nav-list>
+
+
+
