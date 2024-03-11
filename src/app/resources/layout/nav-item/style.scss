@@ -1,11 +1,12 @@
-@import '../styles/modules/variables';
-
 .nav-list-container {
   display: flex;
   flex-direction: column;
-  height: 86vh;
+  height: auto;
 }
 
-.nav-list-settings {
+.nav-list-settings{
+  position: absolute;
   margin-top: auto;
+  width: 100%;
+  bottom: 10vh;
 }

@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {MatListModule} from "@angular/material/list";
 import {RouterLink, RouterLinkActive} from "@angular/router";
+
 @Component({
   selector: 'ot-nav-item',
   standalone: true,
@@ -11,8 +12,8 @@ import {RouterLink, RouterLinkActive} from "@angular/router";
     RouterLinkActive,
     MatListModule,
   ],
-  templateUrl: 'navItem.template.html',
-  styleUrls: ['navItem.style.scss']
+  templateUrl: 'template.html',
+  styleUrls: ['style.scss']
 })
 export default class NavItemComponent {
 }

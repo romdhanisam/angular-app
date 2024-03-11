@@ -7,8 +7,6 @@ import {
   ViewChild
 } from "@angular/core";
 import {MatDrawerMode, MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
-import {Store} from "@ngrx/store";
-import {AppTheme, THEMES, UpdateTheme} from "@Store/reducers/theme-reducer";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {MatDividerModule} from "@angular/material/divider";
@@ -21,8 +19,8 @@ import {MatRippleModule} from "@angular/material/core";
 import {BehaviorSubject} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
-import LayoutSmComponent from "@Resource/layout/layout-sm/layout-sm.component";
-import NavItemComponent from "@Resource/layout/nav-item/navItem.component";
+import NavItemComponent from "@Resource/layout/nav-item/component";
+import LayoutSmComponent from "@Resource/layout/layout-sm/component";
 
 @Component({
   selector: 'ot-layout',
@@ -32,11 +30,11 @@ import NavItemComponent from "@Resource/layout/nav-item/navItem.component";
     RouterModule,
     MatSidenavModule, MatDividerModule, MatListModule, MatToolbarModule, MatIconModule, MatButtonModule,
     MatRippleModule, MatDialogModule,
-    LayoutSmComponent, NavItemComponent,
+    LayoutSmComponent, NavItemComponent
   ],
   providers: [MatDialog],
-  templateUrl: 'layout.template.html',
-  styleUrls: ['layout.style.scss']
+  templateUrl: 'template.html',
+  styleUrls: ['style.scss']
 })
 export default class LayoutComponent implements OnInit {
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
@@ -47,8 +45,7 @@ export default class LayoutComponent implements OnInit {
   isProdMode: boolean = environment.production;
   public screenWidth$ = new BehaviorSubject<number>(window.innerWidth);
 
-  constructor(public readonly store: Store<AppTheme>,
-              private readonly dialog: MatDialog) {}
+  constructor(private readonly dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.screenWidth$.asObservable().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(width => {
@@ -68,10 +65,6 @@ export default class LayoutComponent implements OnInit {
     });
   }
 
-  changeTheme(newThemeName: string) {
-    this.store.dispatch(new UpdateTheme(THEMES.find(value => value.displayName == newThemeName)));
-  }
-
   getDebugClass(): string {
     switch (environment.env) {
       case 'DEV':
@@ -87,6 +80,11 @@ export default class LayoutComponent implements OnInit {
   private onResize(event: any) {
     this.screenWidth$.next(event.target.innerWidth);
   }
+
+  // @HostListener("window:scroll", ["$event"])
+  // onWindowScroll(event: any) {
+  //   event.stopPropagation();
+  // }
 
   toggle() {
       this.dialog.open(LayoutSmComponent, {

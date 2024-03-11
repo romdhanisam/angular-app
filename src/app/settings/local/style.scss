@@ -1,0 +1,16 @@
+@import '../styles/modules/variables';
+
+.ot-settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $baseline-grid;
+  flex-direction: column;
+}
+
+.settings-item {
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+

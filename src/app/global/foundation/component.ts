@@ -9,7 +9,7 @@ import {MatTableModule} from "@angular/material/table";
     selector: 'about',
     standalone: true,
     imports: [CommonModule, MatCardModule, MatButtonModule, MatTableModule, NgOptimizedImage],
-    templateUrl: 'about.template.html'
+    templateUrl: 'template.html'
 })
 export default class AboutProjectComponent  {
     public version: string = packageInfo.version;

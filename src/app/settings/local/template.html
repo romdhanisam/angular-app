@@ -1,0 +1,26 @@
+<mat-card class="mat-elevation-z2">
+  <mat-card-content class="ot-settings">
+    <div class="settings-item">
+      <div>Theme</div>
+      <div class="ot-muted">Choose color theme of the project</div>
+      <mat-form-field class="ot-standard-form-field" *ngIf="store.select('theme') | async as theme">
+        <mat-select [formControl]="themeControl"
+                    (valueChange)="changeTheme(theme.isDark ? 'Light': 'Dark')">
+          <mat-option *ngFor="let theme of themes" [value]="theme.displayName">
+            <mat-icon>
+              {{ theme.isDark ? 'nights_stay' : 'wb_sunny'}}</mat-icon>
+            {{ theme.displayName }} </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="settings-item">
+      <div>Language</div>
+      <div class="ot-muted">Change the language of the project</div>
+      <mat-form-field *ngIf="store.select('theme') | async as theme">
+        <mat-select [formControl]="languageControl">
+          <mat-option [value]="systemLanguage">{{ systemLanguage}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>

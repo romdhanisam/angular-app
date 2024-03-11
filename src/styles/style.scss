@@ -32,7 +32,7 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
   $card-background: theming.mat-color($background-palette, card);
   $card-foreground: theming.mat-color($foreground-palette, card);
   $muted: theming.mat-color($foreground-palette, secondary-text);
-  $muted2: theming.mat-color($foreground-palette, secondary-text);
+  $muted: theming.mat-color($foreground-palette, secondary-text);
   $muted-light: theming.mat-color($foreground-palette, disabled);
 
   .spacer {
@@ -47,6 +47,14 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
     background-color: color.adjust(map.get($colors, indicator-warning), $lightness: 10%);
   }
 
+  .ot-muted {
+    color: $muted;
+  }
+
+  .ot-muted-light {
+    color: $muted-light;
+  }
+
   mat-sidenav-container {
     height: calc(100vh - 65px);
   }
@@ -57,6 +65,7 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
     border-radius: $baseline-grid;
     padding: $baseline-grid * 2;
     text-align: center;
+    height: 100vh;
   }
 
   .mat-mdc-nav-list .mat-mdc-list-item {
@@ -241,5 +250,5 @@ $angular-app-dark-theme: mat.define-dark-theme((
  * VIEWS *
 =========*/
 
-@import 'views/_home.scss';
+@import 'views/_home';
 

@@ -10,8 +10,8 @@ import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {BehaviorSubject} from "rxjs";
 import {environment} from "../../../../environments/environment";
-import NavItemComponent from "@Resource/layout/nav-item/navItem.component";
 import packageInfo from "../../../../../package.json";
+import NavItemComponent from "@Resource/layout/nav-item/component";
 
 @Component({
   selector: 'ot-layout-sm',
@@ -23,8 +23,8 @@ import packageInfo from "../../../../../package.json";
     NavItemComponent
   ],
   providers: [{provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: {disabled: true}}],
-  templateUrl: 'layout-sm.template.html',
-  styleUrls: ['../layout.style.scss']
+  templateUrl: 'template.html',
+  styleUrls: ['../style.scss']
 })
 export default class LayoutSmComponent implements OnInit{
   private screenWidth$ = new BehaviorSubject<number>(window.innerWidth);
@@ -34,7 +34,7 @@ export default class LayoutSmComponent implements OnInit{
   protected readonly environment = environment;
 
   constructor(private readonly router: Router,
-              public readonly dialogRef: MatDialogRef<LayoutSmComponent>) {}
+              public readonly dialogRef: MatDialogRef<Component>) {}
 
   ngOnInit(): void {
     this.screenWidth$.asObservable().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(width => {
@@ -58,6 +58,11 @@ export default class LayoutSmComponent implements OnInit{
   @HostListener('window:resize', ['$event'])
   private onResize(event: any) {
     this.screenWidth$.next(event.target.innerWidth);
+  }
+
+  @HostListener("window:scroll", ["$event"])
+  onWindowScroll(event: any) {
+    event.stopPropagation();
   }
 
 }

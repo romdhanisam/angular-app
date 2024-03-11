@@ -5,19 +5,13 @@
         </button>
     </ng-container>
     <span class="app-name">angular-app Demo</span>
-    <span class="spacer"></span>
-    <ng-container *ngIf="store.select('theme') | async as theme">
-        <button mat-icon-button (click)="changeTheme(theme.isDark ? 'Light': 'Dark')">
-            <mat-icon>{{ theme.isDark? 'wb_sunny' : 'nights_stay' }}</mat-icon>
-        </button>
-    </ng-container>
 </mat-toolbar>
 <mat-toolbar *ngIf="!isProdMode" class="ot-debug-toolbar" [ngClass]="getDebugClass()">
     <mat-toolbar-row>
         <span>Test environment ({{environment.env}})</span>
     </mat-toolbar-row>
 </mat-toolbar>
-<mat-sidenav-container>
+<mat-sidenav-container >
     <mat-sidenav class="mat-elevation-z2" [mode]="mode" [opened]="openSidenav" (openedStart)="openedStart()">
         <ot-nav-item/>
     </mat-sidenav>
