@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1710140090685,
+  "timestamp": 1710140517595,
   "index": "https://romdhanisam.github.io/angular-app/index.html",
   "assetGroups": [
     {
@@ -17,7 +17,7 @@
         "https://romdhanisam.github.io/angular-app/715.e94b9edee536ea95.js",
         "https://romdhanisam.github.io/angular-app/favicon.ico",
         "https://romdhanisam.github.io/angular-app/index.html",
-        "https://romdhanisam.github.io/angular-app/main.d75a12b1a900cc7a.js",
+        "https://romdhanisam.github.io/angular-app/main.61c2082c6ba19741.js",
         "https://romdhanisam.github.io/angular-app/manifest.webmanifest",
         "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js",
         "https://romdhanisam.github.io/angular-app/runtime.acffd61e6b34a6f7.js",
@@ -75,8 +75,8 @@
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
-    "https://romdhanisam.github.io/angular-app/index.html": "19afcfca74d838b8f8447c98986e6cd32cdbfa54",
-    "https://romdhanisam.github.io/angular-app/main.d75a12b1a900cc7a.js": "674f937169f3654c6a988937a65418f32be851f5",
+    "https://romdhanisam.github.io/angular-app/index.html": "dea1021f06549eedd1f5ab045763db0d9ccbdad5",
+    "https://romdhanisam.github.io/angular-app/main.61c2082c6ba19741.js": "347aac50631ee1e3133d11599562650d65df426f",
     "https://romdhanisam.github.io/angular-app/manifest.webmanifest": "bd6beb5a3caa036b20f57a539ae50de9b05f67c5",
     "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js": "5020e0d2b76de8173745bf5261b720c20f709818",
     "https://romdhanisam.github.io/angular-app/runtime.acffd61e6b34a6f7.js": "811dd7382210f83fc12c2b09590eb5d9b0965514",
