@@ -1,5 +1,12 @@
-import {Component, ViewChild} from "@angular/core";
-import {MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
+import {
+  Component,
+  DestroyRef,
+  HostListener,
+  inject,
+  OnInit,
+  ViewChild
+} from "@angular/core";
+import {MatDrawerMode, MatSidenav, MatSidenavModule} from "@angular/material/sidenav";
 import {Store} from "@ngrx/store";
 import {AppTheme, THEMES, UpdateTheme} from "@Store/reducers/theme-reducer";
 import {CommonModule} from "@angular/common";
@@ -11,7 +18,11 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {environment} from "../../../environments/environment";
 import {MatRippleModule} from "@angular/material/core";
-
+import {BehaviorSubject} from "rxjs";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import LayoutSmComponent from "@Resource/layout/layout-sm/layout-sm.component";
+import NavItemComponent from "@Resource/layout/nav-item/navItem.component";
 
 @Component({
   selector: 'ot-layout',
@@ -19,26 +30,45 @@ import {MatRippleModule} from "@angular/material/core";
   imports: [
     CommonModule,
     RouterModule,
-    //Mat
-    MatSidenavModule,MatDividerModule,MatListModule,MatToolbarModule,MatIconModule,MatButtonModule,
-      MatRippleModule
+    MatSidenavModule, MatDividerModule, MatListModule, MatToolbarModule, MatIconModule, MatButtonModule,
+    MatRippleModule, MatDialogModule,
+    LayoutSmComponent, NavItemComponent,
   ],
+  providers: [MatDialog],
   templateUrl: 'layout.template.html',
   styleUrls: ['layout.style.scss']
 })
-export default class LayoutComponent {
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
-  env: string;
-  isProdMode: boolean;
-  isDarkMode = false;
-  constructor(private readonly store: Store<AppTheme>) {
-    this.env = environment.env;
-    this.isProdMode = environment.production;
+export default class LayoutComponent implements OnInit {
+  @ViewChild(MatSidenav) sidenav!: MatSidenav;
+  mode: MatDrawerMode;
+  openSidenav:boolean;
+  private destroyRef = inject(DestroyRef);
+  environment = environment;
+  isProdMode: boolean = environment.production;
+  public screenWidth$ = new BehaviorSubject<number>(window.innerWidth);
+
+  constructor(public readonly store: Store<AppTheme>,
+              private readonly dialog: MatDialog) {}
+
+  ngOnInit(): void {
+    this.screenWidth$.asObservable().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(width => {
+       if(width < 640) {
+        this.mode = 'over';
+        if(this.sidenav?.opened) {
+          this.dialog.open(LayoutSmComponent,
+              {
+                maxWidth: '100vw',
+                maxHeight: '100vh',
+                height: '100%',
+                width: '100%',
+              }).afterClosed().pipe(takeUntilDestroyed(this.destroyRef))
+              .subscribe((openSidenav: any) => this.openSidenav = !openSidenav);
+        }
+       }
+    });
   }
 
   changeTheme(newThemeName: string) {
-    this.isDarkMode = !this.isDarkMode;
     this.store.dispatch(new UpdateTheme(THEMES.find(value => value.displayName == newThemeName)));
   }
 
@@ -53,10 +83,24 @@ export default class LayoutComponent {
     }
   }
 
+  @HostListener('window:resize', ['$event'])
+  private onResize(event: any) {
+    this.screenWidth$.next(event.target.innerWidth);
+  }
+
+  toggle() {
+      this.dialog.open(LayoutSmComponent, {
+        maxWidth: '100vw',
+        maxHeight: '100vh',
+        height: '100%',
+        width: '100%'})
+          .afterClosed().pipe(takeUntilDestroyed(this.destroyRef))
+          .subscribe((openSidenav: any) => this.openSidenav = !openSidenav);
+  }
+
   openedStart() {
     this.sidenav.mode = "side";
     this.sidenav.open();
   }
-
 
 }

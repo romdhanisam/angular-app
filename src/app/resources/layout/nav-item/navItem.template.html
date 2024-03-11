@@ -1,0 +1,20 @@
+<mat-nav-list class="nav-list-container">
+    <a mat-list-item
+       [routerLink]="['main']"
+       disableRipple
+       [routerLinkActive]="['mdc-list-item--activated', 'ot-nav-item-active']"
+       queryParamsHandling="preserve">
+        Item main
+    </a>
+    <mat-divider/>
+    <a mat-list-item
+       [routerLink]="['about']"
+       disableRipple
+       [routerLinkActive]="['mdc-list-item--activated', 'ot-nav-item-active']"
+       queryParamsHandling="preserve">
+        About
+    </a>
+</mat-nav-list>
+
+
+

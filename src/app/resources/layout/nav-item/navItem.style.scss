@@ -1,0 +1,11 @@
+@import '../styles/modules/variables';
+
+.nav-list-container {
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
+}
+
+.nav-list-settings {
+  margin-top: auto;
+}
