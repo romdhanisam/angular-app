@@ -3,9 +3,8 @@
     <div class="settings-item">
       <div>Theme</div>
       <div class="ot-muted">Choose color theme of the project</div>
-      <mat-form-field class="ot-standard-form-field" *ngIf="store.select('theme') | async as theme">
-        <mat-select [formControl]="themeControl"
-                    (valueChange)="changeTheme(theme.isDark ? 'Light': 'Dark')">
+      <mat-form-field class="ot-standard-form-field">
+        <mat-select [formControl]="themeControl" (valueChange)="changeTheme()">
           <mat-option *ngFor="let theme of themes" [value]="theme.displayName">
             <mat-icon>
               {{ theme.isDark ? 'nights_stay' : 'wb_sunny'}}</mat-icon>
