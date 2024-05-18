@@ -4,6 +4,7 @@ import { expect } from '@jest/globals';
 import {RouterTestingModule} from "@angular/router/testing";
 import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 import LayoutComponent from "./component";
+import {StoreModule} from "@ngrx/store";
 
 describe('LayoutComponent', () => {
   let component: LayoutComponent;
@@ -13,6 +14,7 @@ describe('LayoutComponent', () => {
       imports: [
         RouterTestingModule,
         NoopAnimationsModule,
+        StoreModule.forRoot({})
       ],
       providers: []
     }).compileComponents();

@@ -21,6 +21,10 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import NavItemComponent from "@Resource/layout/nav-item/component";
 import LayoutSmComponent from "@Resource/layout/layout-sm/component";
+import {FormControl} from "@angular/forms";
+import {AppTheme, THEMES, UpdateTheme} from "@Store/reducers/theme-reducer";
+import {TTheme} from "@Global/model";
+import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'ot-layout',
@@ -44,8 +48,15 @@ export default class LayoutComponent implements OnInit {
   environment = environment;
   isProdMode: boolean = environment.production;
   public screenWidth$ = new BehaviorSubject<number>(window.innerWidth);
+  themeControl: FormControl = new FormControl<string>('');
+  themes: TTheme[] = THEMES;
 
-  constructor(private readonly dialog: MatDialog) {}
+  constructor(private readonly dialog: MatDialog,
+              private readonly store: Store<AppTheme>) {
+    this.store.select("theme").pipe(takeUntilDestroyed(this.destroyRef)).subscribe(value => {
+      this.themeControl.setValue(value.displayName);
+    });
+  }
 
   ngOnInit(): void {
     this.screenWidth$.asObservable().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(width => {
@@ -63,6 +74,12 @@ export default class LayoutComponent implements OnInit {
         }
        }
     });
+  }
+
+  changeTheme() {
+    this.store.dispatch(new UpdateTheme(
+        this.themes.find(value =>
+            value.displayName != this.themeControl.value)));
   }
 
   getDebugClass(): string {

@@ -5,6 +5,10 @@
         </button>
     </ng-container>
     <span class="app-name">angular-app Demo</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="changeTheme()">
+        <mat-icon>{{ themeControl.value === 'Dark' ? 'wb_sunny' : 'nights_stay' }}</mat-icon>
+    </button>
 </mat-toolbar>
 <mat-toolbar *ngIf="!isProdMode" class="ot-debug-toolbar" [ngClass]="getDebugClass()">
     <mat-toolbar-row>
