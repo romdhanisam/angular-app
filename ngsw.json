@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1716069921600,
+  "timestamp": 1716070948724,
   "index": "https://romdhanisam.github.io/angular-app/index.html",
   "assetGroups": [
     {
@@ -17,7 +17,7 @@
         "https://romdhanisam.github.io/angular-app/715.7729392d63b85553.js",
         "https://romdhanisam.github.io/angular-app/favicon.ico",
         "https://romdhanisam.github.io/angular-app/index.html",
-        "https://romdhanisam.github.io/angular-app/main.ef2b86c923bc5f11.js",
+        "https://romdhanisam.github.io/angular-app/main.655b39b1d1f3442e.js",
         "https://romdhanisam.github.io/angular-app/manifest.webmanifest",
         "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js",
         "https://romdhanisam.github.io/angular-app/runtime.08815994a0aa0025.js",
@@ -70,8 +70,8 @@
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
-    "https://romdhanisam.github.io/angular-app/index.html": "f4581330f35ff9b66e9e104b5b89b354363db9ac",
-    "https://romdhanisam.github.io/angular-app/main.ef2b86c923bc5f11.js": "019ba27602f146e00865e7992df93c44025c9358",
+    "https://romdhanisam.github.io/angular-app/index.html": "4ced0fd0a12e0fc0e29da77ebb4371da9e7ec88f",
+    "https://romdhanisam.github.io/angular-app/main.655b39b1d1f3442e.js": "9fd9af32182d97a2727cc427062abc58b24b0c45",
     "https://romdhanisam.github.io/angular-app/manifest.webmanifest": "bd6beb5a3caa036b20f57a539ae50de9b05f67c5",
     "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js": "5020e0d2b76de8173745bf5261b720c20f709818",
     "https://romdhanisam.github.io/angular-app/runtime.08815994a0aa0025.js": "f8856d3447711cee2b56f083f2495e4d0535f973",
