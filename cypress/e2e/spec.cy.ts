@@ -2,7 +2,7 @@ describe('My First Test (screenshot)', () => {
 
   it('Visits the initial page: ok', () => {
     cy.visit('/');
-    cy.contains('angular-app Demo');
+    cy.contains('angular-app starter');
     cy.screenshot('1_initial_page');
   });
 

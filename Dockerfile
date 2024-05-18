@@ -1,23 +1,17 @@
-FROM node:16.20
+FROM node:18.14.0
+WORKDIR /app
+COPY package*.json ./
+# Run command in Virtual directory
+ENV NPM_CONFIG_LOGLEVEL error
+RUN npm cache clean --force
+RUN npm ci
 
-ENV NPM_CONFIG_LOGLEVEL warn
-ARG app_env
-ENV APP_ENV $app_env
-
-LABEL maintainer="Samir Romdhani samir.romdhani1994@gmail.com"
-
-RUN mkdir -p /frontend
-WORKDIR /frontend
-COPY ./ ./
-
-RUN npm install
-
-CMD if [ ${APP_ENV} = production ]; then npm install -g http-server && \
-	npm run build && \
-	cd build && \
-	http-server -p 3000; \
-	else \
-	npm run start; \
-	fi
-
-EXPOSE 3000
+COPY . .
+ARG configuration=development
+RUN npm run build -- --output-path=./dist/out --configuration $configuration
+# run with nginx
+FROM nginx:1.17
+# WORKDIR /usr/share/nginx/html
+COPY --from=0 /app/dist/out/ /usr/share/nginx/html
+COPY /nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
