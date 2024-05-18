@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1716069823188,
+  "timestamp": 1716069921600,
   "index": "https://romdhanisam.github.io/angular-app/index.html",
   "assetGroups": [
     {
@@ -11,16 +11,16 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://romdhanisam.github.io/angular-app/145.e94cf4d7e19e37b4.js",
         "https://romdhanisam.github.io/angular-app/195.b7bbdf4f9efb6974.js",
         "https://romdhanisam.github.io/angular-app/580.294e848aa91df71a.js",
+        "https://romdhanisam.github.io/angular-app/673.6ab3b7ac85b37bdf.js",
         "https://romdhanisam.github.io/angular-app/715.7729392d63b85553.js",
         "https://romdhanisam.github.io/angular-app/favicon.ico",
         "https://romdhanisam.github.io/angular-app/index.html",
-        "https://romdhanisam.github.io/angular-app/main.4d92b8378da8ac3c.js",
+        "https://romdhanisam.github.io/angular-app/main.ef2b86c923bc5f11.js",
         "https://romdhanisam.github.io/angular-app/manifest.webmanifest",
         "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js",
-        "https://romdhanisam.github.io/angular-app/runtime.62edc4ed058a06da.js",
+        "https://romdhanisam.github.io/angular-app/runtime.08815994a0aa0025.js",
         "https://romdhanisam.github.io/angular-app/styles.815d3a219d6e512d.css"
       ],
       "patterns": []
@@ -52,9 +52,9 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://romdhanisam.github.io/angular-app/145.e94cf4d7e19e37b4.js": "ca975c872cc41552bb30020b9b35704cb55bb312",
     "https://romdhanisam.github.io/angular-app/195.b7bbdf4f9efb6974.js": "ff9f6325e82ad64a9bc137f844f0bf5b56b936e1",
     "https://romdhanisam.github.io/angular-app/580.294e848aa91df71a.js": "1b0f041008b1c93556de51df7192f91eeb8f7505",
+    "https://romdhanisam.github.io/angular-app/673.6ab3b7ac85b37bdf.js": "da347695d2d46df2dfd9e19888ac4b94529ec06f",
     "https://romdhanisam.github.io/angular-app/715.7729392d63b85553.js": "48c39cb9cbc5614b9cddd178ad45a6d605be29f4",
     "https://romdhanisam.github.io/angular-app/assets/icons/github.svg": "074e7a34c486d8956562b65a247d908ee097fb07",
     "https://romdhanisam.github.io/angular-app/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
@@ -70,11 +70,11 @@
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.cf011583fb81df9f.woff": "28b782240b3e76db824e12c02754a9731a167527",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.da909aa098b0ee2d.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
     "https://romdhanisam.github.io/angular-app/fontawesome-webfont.e9955780856cf8aa.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
-    "https://romdhanisam.github.io/angular-app/index.html": "2cd0c1ee48d2120a1d2344b57098c403f4ec81cf",
-    "https://romdhanisam.github.io/angular-app/main.4d92b8378da8ac3c.js": "208dafcaff49b135901d320daad760d0e62cf2f2",
+    "https://romdhanisam.github.io/angular-app/index.html": "f4581330f35ff9b66e9e104b5b89b354363db9ac",
+    "https://romdhanisam.github.io/angular-app/main.ef2b86c923bc5f11.js": "019ba27602f146e00865e7992df93c44025c9358",
     "https://romdhanisam.github.io/angular-app/manifest.webmanifest": "bd6beb5a3caa036b20f57a539ae50de9b05f67c5",
     "https://romdhanisam.github.io/angular-app/polyfills.1227f3ae781759e0.js": "5020e0d2b76de8173745bf5261b720c20f709818",
-    "https://romdhanisam.github.io/angular-app/runtime.62edc4ed058a06da.js": "6c8e928c460431547d4480c1f53ff29c7e98334a",
+    "https://romdhanisam.github.io/angular-app/runtime.08815994a0aa0025.js": "f8856d3447711cee2b56f083f2495e4d0535f973",
     "https://romdhanisam.github.io/angular-app/styles.815d3a219d6e512d.css": "2e31202c7d9554fe17782db37688dc626f43fe60"
   },
   "navigationUrls": [
