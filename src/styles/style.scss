@@ -5,24 +5,17 @@
 @use '@angular/material';
 @use '@angular/material' as mat;
 @use '@angular/material/theming';
+@use '@material/theme/theme-color' as mdc-theme-color;
+//@use '@material/button/button-theme' as mdc-button-theme;
 
 // Whether duplication warnings should be disabled. Warnings enabled by default.
-mat.$theme-ignore-duplication-warnings: true;
+//mat.$theme-ignore-duplication-warnings: true;
 
 // Common styles for Angular Material
 @include mat.core();
 
 @import 'modules/_variables.scss';
 @import 'modules/_functions.scss';
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$angular-app-primary: mat.define-palette(mat.$indigo-palette, 500);
-$angular-app-accent: mat.define-palette(mat.$light-blue-palette);
-// The warn palette is optional (defaults to red).
-$angular-app-warn: mat.define-palette(mat.$red-palette);
-$angular-app-success: mat.define-palette(mat.$green-palette);
 
 
 @mixin angular-app-theme($theme, $colors) {
@@ -76,7 +69,91 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
   .ot-nav-item-active {
     border: 1.5mm;
   }
+
+
+  //https://angular-material.dev/articles/customizing-angular-material-button
+  //button.success {
+  //  background-color: green;
+  //}
+  // button.success {
+  //   &.mat-button,
+  //   &.mat-raised-button,
+  //   &.mat-flat-button {
+  //     border-radius: 25% / 50%;
+  //     background-color: green;
+  //   }
+  // }
+
+  button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+  button,
+  button.mat-button,
+  button.mat-raised-button {
+    &.success  {
+      // border-radius: 25% / 50%;
+      background-color: green;
+
+      &:disabled {
+        cursor: not-allowed;
+        pointer-events: all !important;
+        //$on-surface: mdc-theme-color.prop-value(on-surface);
+        ////color: rgba($on-surface, 0.12);
+        //$is-dark: map.get($theme, is-dark);
+        //$disabled-container-color: rgba($on-surface, 0.12);
+        //$disabled-ink-color: rgba($on-surface, if($is-dark, 0.5, 0.38));
+        //
+        //color: rgba($on-surface, 0.4);
+        //background-color: rgba($on-surface, 0.12);
+        background-color: rgba(mdc-theme-color.prop-value(on-surface), 0.12);
+      }
+    }
+  }
+  button.danger {
+    background-color: red;
+
+    &:disabled {
+      cursor: not-allowed;
+      pointer-events: all !important;
+      $on-surface: mdc-theme-color.prop-value(on-surface);
+      //color: rgba($on-surface, 0.12);
+      $is-dark: map.get($theme, is-dark);
+      $disabled-container-color: rgba($on-surface, 0.12);
+      $disabled-ink-color: rgba($on-surface, if($is-dark, 0.5, 0.38));
+
+      //color: rgba($on-surface, if($is-dark, 0.5, 0.38));
+      background-color: rgba($on-surface, 0.12);
+
+      //background-color: rgba(red, 0.12);
+      //disabled-container-color: $disabled-container-color;
+      //disabled-label-text-color: $disabled-ink-color;
+      //container-color: $disabled-container-color;
+      //label-text-color: $disabled-ink-color;
+
+      //$on-surface: mdc-theme-color.prop-value(on-surface);
+      //$surface: mdc-theme-color.prop-value(surface);
+      //$primary: mdc-theme-color.prop-value(primary);
+      //$on-primary: mdc-theme-color.prop-value(on-primary);
+      //$secondary: mdc-theme-color.prop-value(secondary);
+      //$on-secondary: mdc-theme-color.prop-value(on-secondary);
+      //$error: mdc-theme-color.prop-value(error);
+      //$on-error: mdc-theme-color.prop-value(on-error);
+      //
+
+    }
+  }
+
 }
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$angular-app-primary: mat.define-palette(mat.$indigo-palette, 500);
+$angular-app-accent: mat.define-palette(mat.$light-blue-palette);
+// The warn palette is optional (defaults to red).
+$angular-app-warn: mat.define-palette(mat.$red-palette);
+$angular-app-success: mat.define-palette(mat.$green-palette);
 
 $colors-light: (
   primary: $angular-app-primary,
@@ -97,11 +174,15 @@ $colors-dark: (
 // light theme
 
 $angular-app-light-theme: mat.define-light-theme((
-  color: $colors-light,
+        color: $colors-light,
+        typography: mat.define-typography-config(),
+        density: 0,
 ));
 // dark theme
 $angular-app-dark-theme: mat.define-dark-theme((
-  color: $colors-dark
+        color: $colors-dark,
+        typography: mat.define-typography-config(),
+        density: 0,
 ));
 
 // Apply theme by default
@@ -111,24 +192,29 @@ $angular-app-dark-theme: mat.define-dark-theme((
 // that you are using.
 
 .angular-app-dark-theme {
-  @include mat.core-theme($angular-app-dark-theme);
+  //@include mat.core-theme($angular-app-dark-theme);
+  //@include mat.all-component-themes($angular-app-dark-theme);
   @include mat.all-component-colors($angular-app-dark-theme);
-  @include mat.sidenav-theme($angular-app-dark-theme);
+  @include mat.all-component-typographies($angular-app-dark-theme);
+  @include mat.all-component-densities($angular-app-dark-theme);
+  //@include mat.sidenav-theme($angular-app-dark-theme);
   @include angular-app-theme($angular-app-dark-theme, $colors-dark);
 }
 
 .angular-app-light-theme {
-  @include mat.core-theme($angular-app-light-theme);
+  //@include mat.core-theme($angular-app-light-theme);
+  //@include mat.all-component-themes($angular-app-light-theme);
+  //@include mat.core-theme($angular-app-light-theme);
   @include mat.all-component-colors($angular-app-light-theme);
-  @include mat.sidenav-theme($angular-app-light-theme);
+  @include mat.all-component-typographies($angular-app-light-theme);
+  @include mat.all-component-densities($angular-app-light-theme);
+  //@include mat.sidenav-theme($angular-app-light-theme);
   @include angular-app-theme($angular-app-light-theme, $colors-light);
 }
 
-
 // Angular Material 15/16 Density
 //@include mat.form-field-density(-4);
-@include mat.icon-button-density(-1);
-
+//@include mat.icon-button-density(-1);
 
 // Angular Material 15/16 standard appearance in form field
 .ot-standard-form-field {
@@ -225,25 +311,25 @@ $angular-app-dark-theme: mat.define-dark-theme((
  * MODULES *
 ===========*/
 
-@import 'modules/mixins/_font-face.scss';
-@import 'modules/mixins/_manage-user-select.scss';
-@import 'modules/mixins/_media-queries-indicator.scss';
-@import 'modules/mixins/_normalize.scss';
-@import 'modules/mixins/_responsive.scss';
-@import 'modules/mixins/_selection.scss';
+//@import 'modules/mixins/_font-face.scss';
+//@import 'modules/mixins/_manage-user-select.scss';
+//@import 'modules/mixins/_media-queries-indicator.scss';
+//@import 'modules/mixins/_normalize.scss';
+//@import 'modules/mixins/_responsive.scss';
+//@import 'modules/mixins/_selection.scss';
 
 // Basic Settings.
-@include normalize-all;
-@include manage-user-select;
-@include selection($white, $black);
+//@include normalize-all;
+//@include manage-user-select;
+//@include selection($white, $black);
 
 /*===========
  * PARTIALS *
 ============*/
 
-@import 'partials/_typography.scss';
-@import 'partials/_elements.scss';
-@import 'partials/_layout.scss';
+//@import 'partials/_typography.scss';
+//@import 'partials/_elements.scss';
+//@import 'partials/_layout.scss';
 
 
 /*========
