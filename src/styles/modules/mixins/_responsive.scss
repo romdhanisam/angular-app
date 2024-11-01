@@ -4,7 +4,6 @@
 // Settings
 $mobile-first: 'min-width';
 $desktop-first: 'max-width';
-
 $named-breakpoints: (
 	'iphone': em(320px),
 	'phones': em(480px),
@@ -14,7 +13,6 @@ $named-breakpoints: (
 );
 
 @mixin responsive($approach: null, $breakpoint: null, $properties: null) {
-
 	// Set approach type
 	@if $approach == '>' {
 		$approach: $mobile-first;
@@ -25,7 +23,7 @@ $named-breakpoints: (
 	// Get breakpoint value from breakpoints array
 	@if type-of($breakpoint) == string {
 		// Check if breakpoint name exist in array
-		@if (map-has-key($named-breakpoints, $breakpoint)) {
+		@if map-has-key($named-breakpoints, $breakpoint) {
 			// Set breakpoint value
 			$breakpoint: map-get($named-breakpoints, $breakpoint);
 		} @else {

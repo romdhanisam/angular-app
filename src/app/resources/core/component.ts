@@ -6,6 +6,6 @@ import {RouterModule} from "@angular/router";
   selector: 'ot-main',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  template: `<router-outlet></router-outlet>`
+  templateUrl: './template.html'
 })
 export default class MainComponent {}

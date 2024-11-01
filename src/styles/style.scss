@@ -1,25 +1,56 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+
+/* =============
+ * FRAMEWORKS *
+============== */
+
 @use 'sass:map';
 @use 'sass:color';
 @use '@angular/material';
 @use '@angular/material' as mat;
 @use '@angular/material/theming';
 
+/* ==========
+ * MODULES *
+=========== */
+
+@import 'modules/mixins/_font-face';
+@import 'modules/mixins/_manage-user-select';
+@import 'modules/mixins/_media-queries-indicator';
+@import 'modules/mixins/_normalize';
+@import 'modules/mixins/_responsive';
+@import 'modules/mixins/_selection';
+
+/* ===========
+ * PARTIALS *
+============ */
+
+@import 'partials/_typography';
+@import 'partials/_elements';
+@import 'partials/_layout';
+
+/* ========
+ * VIEWS *
+========= */
+
+@import 'views/_home';
+
 // Whether duplication warnings should be disabled. Warnings enabled by default.
 mat.$theme-ignore-duplication-warnings: true;
 
 // Common styles for Angular Material
-@include mat.core();
+@import 'modules/_variables';
+@import 'modules/_functions';
+@include mat.core;
 
-@import 'modules/_variables.scss';
-@import 'modules/_functions.scss';
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $angular-app-primary: mat.define-palette(mat.$indigo-palette, 500);
 $angular-app-accent: mat.define-palette(mat.$light-blue-palette);
+
 // The warn palette is optional (defaults to red).
 $angular-app-warn: mat.define-palette(mat.$red-palette);
 $angular-app-success: mat.define-palette(mat.$green-palette);
@@ -43,6 +74,7 @@ $angular-app-success: mat.define-palette(mat.$green-palette);
   .ot-toolbar-success {
     background-color: color.adjust(map.get($colors, indicator-success), $lightness: 20%);
   }
+
   .ot-toolbar-warning {
     background-color: color.adjust(map.get($colors, indicator-warning), $lightness: 10%);
   }
@@ -99,6 +131,7 @@ $colors-dark: (
 $angular-app-light-theme: mat.define-light-theme((
   color: $colors-light,
 ));
+
 // dark theme
 $angular-app-dark-theme: mat.define-dark-theme((
   color: $colors-dark
@@ -126,7 +159,7 @@ $angular-app-dark-theme: mat.define-dark-theme((
 
 
 // Angular Material 15/16 Density
-//@include mat.form-field-density(-4);
+// @include mat.form-field-density(-4);
 @include mat.icon-button-density(-1);
 
 
@@ -217,38 +250,8 @@ $angular-app-dark-theme: mat.define-dark-theme((
  *
  */
 
-/*=============
- * FRAMEWORKS *
-==============*/
-
-/*==========
- * MODULES *
-===========*/
-
-@import 'modules/mixins/_font-face.scss';
-@import 'modules/mixins/_manage-user-select.scss';
-@import 'modules/mixins/_media-queries-indicator.scss';
-@import 'modules/mixins/_normalize.scss';
-@import 'modules/mixins/_responsive.scss';
-@import 'modules/mixins/_selection.scss';
 
 // Basic Settings.
 @include normalize-all;
 @include manage-user-select;
 @include selection($white, $black);
-
-/*===========
- * PARTIALS *
-============*/
-
-@import 'partials/_typography.scss';
-@import 'partials/_elements.scss';
-@import 'partials/_layout.scss';
-
-
-/*========
- * VIEWS *
-=========*/
-
-@import 'views/_home';
-

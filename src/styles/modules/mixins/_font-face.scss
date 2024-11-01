@@ -10,7 +10,8 @@
     font-weight: $weight;
     font-style: $style;
   }
-  @media screen and (-webkit-min-device-pixel-ratio:0) {
+
+  @media screen and (min-device-pixel-ratio:0) {
     @font-face {
       font-family: $name;
       src: url('#{$path}#{$filename}.svg##{$name}') format('svg');

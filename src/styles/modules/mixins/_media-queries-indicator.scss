@@ -1,6 +1,6 @@
 // Media queries indicator
 @mixin media-queries-indicator($view: 'undefined') {
-  body:after {
+  body::after {
     content: $view;
     display: none;
   }

@@ -1,17 +1,15 @@
 // normalize.css v3.0.1
 @mixin normalize-html {
   font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @mixin normalize-body {
   margin: 0;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }
 
 @mixin normalize-all {
-
   article,
   aside,
   details,
@@ -47,6 +45,7 @@
 
   a {
     background: transparent;
+
     &:active,
     &:hover {
       outline: 0;
@@ -113,7 +112,6 @@
   }
 
   hr {
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     height: 0;
   }
@@ -153,7 +151,7 @@
   html input[type="button"],
   input[type="reset"],
   input[type="submit"] {
-    -webkit-appearance: button;
+    appearance: button;
     cursor: pointer;
   }
 
@@ -170,6 +168,7 @@
 
   input {
     line-height: normal;
+
     &[type="checkbox"],
     &[type="radio"] {
       box-sizing: border-box;
@@ -183,15 +182,13 @@
   }
 
   input[type="search"] {
-    -webkit-appearance: textfield;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
+    appearance: textfield;
     box-sizing: content-box;
   }
 
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+    appearance: none;
   }
 
   fieldset {

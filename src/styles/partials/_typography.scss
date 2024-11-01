@@ -18,7 +18,6 @@ $base-lh: 1.5; // 24px
 
 // Typography Colors.
 $black: #000 !default;
-
 $text-color: lighten($black, (100% - 87%));
 $text-secondary-color: lighten($black, (100% - 54%));
 $text-hint-color: lighten($black, (100% - 26%));
@@ -28,7 +27,6 @@ $divider-color: lighten($black, (100% - 12%));
 // Font families.
 $base-font: 'Base Font Name';
 $base-ff: $base-font, Helvetica, Arial, sans-serif;
-
 $heading-font: 'Heading Font Name';
 $heading-ff: $heading-font, Helvetica, Arial, sans-serif;
 
@@ -41,8 +39,10 @@ $heading-ff: $heading-font, Helvetica, Arial, sans-serif;
 
 a {
 	text-decoration: underline;
+
 	&:hover {
 	}
+
 	&:visited {
 	}
 }
@@ -58,31 +58,37 @@ strong {
 
 h1 {
 	@extend %headings;
+
 	// font-size: XXrem
 }
 
 h2 {
 	@extend %headings;
+
 	// font-size: XXrem
 }
 
 h3 {
 	@extend %headings;
+
 	// font-size: XXrem
 }
 
 h4 {
 	@extend %headings;
+
 	// font-size: XXrem
 }
 
 h5 {
 	@extend %headings;
+
 	// font-size: XXrem
 }
 
 h6 {
 	@extend %headings;
+
 	// font-size: XXrem
 }
 

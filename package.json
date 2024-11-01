@@ -28,6 +28,7 @@
     "test:ci:active": "jest --no-cache --coverage --detectOpenHandles --ci --testNamePattern=DevTest",
     "ts:check": "eslint .",
     "html:check": "htmlhint --config .htmlhintrc.json '**/template.html'",
+    "css:check": "stylelint 'src/**/*.*css'",
     "html:prettier": "prettier src/**/template.html --check",
     "deploy": "ng deploy --no-notfound --no-nojekyll --dir=dist/",
     "e2e": "ng e2e",
@@ -92,6 +93,9 @@
     "sass-loader": "13.3.2",
     "start-server-and-test": "^2.0.3",
     "stream-http": "^3.2.0",
+    "stylelint": "^16.8.2",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "~5.0.2",
     "uuid": "^8.3.2"
   },
