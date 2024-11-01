@@ -16,7 +16,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {environment} from "../../../environments/environment";
 import {MatRippleModule} from "@angular/material/core";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, mergeMap, of} from "rxjs";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import NavItemComponent from "@Resource/layout/nav-item/component";
@@ -59,21 +59,23 @@ export default class LayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.screenWidth$.asObservable().pipe(takeUntilDestroyed(this.destroyRef)).subscribe(width => {
-       if(width < 640) {
-        this.mode = 'over';
-        if(this.sidenav?.opened) {
-          this.dialog.open(LayoutSmComponent,
+    this.screenWidth$.asObservable().pipe(takeUntilDestroyed(this.destroyRef),
+        mergeMap((value) => {
+          if(value < 640) {
+            this.mode = 'over';
+             if(this.sidenav?.opened) {
+               return this.dialog.open(LayoutSmComponent,
               {
                 maxWidth: '100vw',
                 maxHeight: '100vh',
                 height: '100%',
                 width: '100%',
-              }).afterClosed().pipe(takeUntilDestroyed(this.destroyRef))
-              .subscribe((openSidenav: any) => this.openSidenav = !openSidenav);
-        }
-       }
-    });
+             }).afterClosed().pipe(takeUntilDestroyed(this.destroyRef))
+             }
+             return of(value)
+          }
+          return of(value);
+        })).subscribe((openSidenav: any) => this.openSidenav = !openSidenav);
   }
 
   changeTheme() {

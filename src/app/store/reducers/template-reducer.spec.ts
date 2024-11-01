@@ -1,7 +1,7 @@
 import { ITemplate, optionsCreationDate, optionsUpdatingDate, TKIND, Template } from "@Global/model"
 import { AddTemplate, RemoveTemplate, UpdateTemplate } from "@Store/actions/app-action"
 import { projectReducer } from "./app-reducer"
-import { expect } from '@jest/globals';
+import { expect, describe, it, beforeEach } from '@jest/globals';
 
 describe('Template Reducer Tests', () => {
   let initialTemplate: Template[]

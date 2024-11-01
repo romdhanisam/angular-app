@@ -3,8 +3,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": [
-    ]
+    "types": [ "node", "jest"]
   },
   "files": [
     "src/main.ts"
@@ -13,7 +12,7 @@
     "src/**/*.d.ts"
   ],
   "exclude": [
-    // "src/**/*.worker.ts",
-    // "src/**/*.interface.ts"
+    "src/**/*.worker.ts",
+    "src/**/*.interface.ts"
   ]
 }

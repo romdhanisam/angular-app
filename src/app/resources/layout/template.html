@@ -1,6 +1,6 @@
 <mat-toolbar>
     <ng-container *ngIf="screenWidth$.asObservable() | async as width">
-        <button mat-icon-button id="nav-button" (click)=" width > 640 ? sidenav.toggle(): toggle()">
+        <button mat-icon-button id="nav-button" (click)="width > 640 ? sidenav.toggle(): toggle()">
             <mat-icon>menu</mat-icon>
         </button>
     </ng-container>
@@ -11,9 +11,7 @@
     </button>
 </mat-toolbar>
 <mat-toolbar *ngIf="!isProdMode" class="ot-debug-toolbar" [ngClass]="getDebugClass()">
-    <mat-toolbar-row>
-        <span>Test environment ({{environment.env}})</span>
-    </mat-toolbar-row>
+    <mat-toolbar-row/>
 </mat-toolbar>
 <mat-sidenav-container >
     <mat-sidenav class="mat-elevation-z2" [mode]="mode" [opened]="openSidenav" (openedStart)="openedStart()">

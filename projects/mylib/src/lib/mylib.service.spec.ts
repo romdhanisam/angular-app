@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { MylibService } from './mylib.service';
+// eslint-disable-next-line node/no-extraneous-import
 import { describe, expect, it, beforeEach } from '@jest/globals';
 
 describe('LibService', () => {

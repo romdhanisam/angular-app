@@ -17,10 +17,8 @@
     "resolveJsonModule": true,
     "target": "ES2022",
     "module": "ES2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
+    "types": [ "node", "jest"],
     "paths": {
       "@CompoLib": ["./projects/compo/src/public-api"],
       "@Global/*": ["src/app/global/*"],

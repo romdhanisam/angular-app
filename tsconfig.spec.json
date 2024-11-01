@@ -6,7 +6,11 @@
     "types": ["jest", "node"]
   },
   "include": [
-    "src/app/resources/**/*.spec.ts",
+    "src/**/*.spec.ts",
+    "setup-jest.ts",
+    "cypress.config.ts",
+    "projects/**/*.ts",
+    "cypress/**/*.ts",
     "src/**/*.d.ts"
   ]
 }
