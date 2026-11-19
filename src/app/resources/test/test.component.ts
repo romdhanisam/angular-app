@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
-import {MylibModule} from "@CompoLib";
+
+// import {MylibModule} from "@CompoLib";
+import {MylibModule} from "@cell4rom/mylib"; // prod version
 
 @Component({
   standalone: true,

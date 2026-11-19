@@ -1,8 +1,7 @@
 name: Publish to NPM Registry
 on:
-  push:
-    branches:
-      - "feat/npm"
+  release:
+    types: [created]
 
 permissions:
   contents: read
@@ -27,7 +26,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies 🔧
-        run: npm ci --prefix ../..
+        run: npm ci --prefix ../.. --force
 
       - name: Build library 🔖
         run: npm run build:prod #or npm run package
