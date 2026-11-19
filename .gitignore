@@ -9,6 +9,11 @@
 *.log
 /node_modules/
 
+# lib
+/projects/mylib/node_modules/
+/projects/mylib/dist/
+/projects/mylib/build/
+
 # CircleCI temporary file for cache key computation.
 # See `save_month_to_file` in `.circleci/config.yml`.
 month.txt

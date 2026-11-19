@@ -14,6 +14,10 @@
   "bugs": {
     "url": "https://github.com/romdhanisam/angular-app/issues"
   },
+  "keywords": [
+    "npm",
+    "angular"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve --configuration development",
@@ -73,6 +77,7 @@
     "@angular-eslint/template-parser": "16.2.0",
     "@angular/cli": "16.2.7",
     "@angular/compiler-cli": "16.2.7",
+    "@cell4rom/mylib": "^0.0.2",
     "@cypress/schematic": "^2.5.1",
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.5",

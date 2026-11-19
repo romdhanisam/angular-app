@@ -16,6 +16,15 @@
        queryParamsHandling="preserve">
         About
     </a>
+    <mat-divider/>
+    <a id="lib1"
+       mat-list-item
+       [routerLink]="['lib']"
+       disableRipple
+       [routerLinkActive]="['mdc-list-item--activated', 'ot-nav-item-active']"
+       queryParamsHandling="preserve">
+        My lib
+    </a>
     <mat-nav-list class="nav-list-settings">
         <mat-divider/>
         <a id="settings"

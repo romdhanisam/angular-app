@@ -10,16 +10,24 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { themeReducer } from "@Store/reducers/theme-reducer";
-import Component from "@Resource/layout/component";
+import LayoutComponent from "@Resource/layout/component";
 import {NgOptimizedImage} from "@angular/common";
 
 export const routes: Routes = [
-  { path: '', component: Component, children: [
+  { path: '', component: LayoutComponent, children: [
       { path: 'main',
         loadComponent: () => import('@Resource/core/component'),
+          children: [
+              { path: '',
+                  loadComponent: () => import('@Resource/child/child.component'),
+              },
+          ]
       },
       { path: 'about',
         loadComponent: () => import('@Global/foundation/component'),
+      },
+      { path: 'lib',
+          loadComponent: () => import('@Resource/test/test.component'),
       },
       { path: 'settings',
           loadComponent: () => import('@Settings/local/component'),
