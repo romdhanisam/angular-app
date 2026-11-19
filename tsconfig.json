@@ -20,7 +20,7 @@
     "lib": ["es2018", "dom"],
     "types": [ "node", "jest"],
     "paths": {
-      "@CompoLib": ["./projects/compo/src/public-api"],
+      "@CompoLib": ["./projects/mylib/src/public-api"],
       "@Global/*": ["src/app/global/*"],
       "@Settings/*": ["src/app/settings/*"],
       "@Shared/*": ["src/app/shared/*"],

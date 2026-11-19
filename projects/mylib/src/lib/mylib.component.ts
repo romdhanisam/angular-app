@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-compo',
+  selector: 'hello-lib',
   template: `
     <p>
-      my lib works!
+      my lib works! 🙌
     </p>
   `,
   styles: [

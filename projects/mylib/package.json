@@ -1,15 +1,26 @@
 {
-  "name": "mylib",
-  "version": "0.0.1",
+  "name": "@cell4rom/mylib",
+  "version": "0.0.1-next.1",
+  "author": {
+    "name": "Samir Romdhani",
+    "email": "samir.romdhani1994@gmail.com"
+  },
   "scripts": {
     "ng": "ng",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "package": "ng-packagr",
+    "publish": "npm publish --access public",
     "test": "jest --no-cache",
     "test:ci": "jest --ci",
     "lint": "ng lint"
   },
+  "keywords": [
+    "npm",
+    "angular"
+  ],
   "peerDependencies": {
-    "@angular/common": "16.2.7"
+    "@angular/common": "^22.3.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
