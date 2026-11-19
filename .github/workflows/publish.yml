@@ -33,8 +33,6 @@ jobs:
         run: npm run build:prod #or npm run package
 
       - name: Publish package on NPM 📦
-        #if: ${{ startsWith(github.ref_name, 'v') }}
-        working-directory: projects/mylib/dist/mylib
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
