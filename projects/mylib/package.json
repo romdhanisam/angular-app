@@ -20,9 +20,11 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/common": "^22.3.0"
+    "@angular/common": "^16.2.0",
+    "@angular/core": "^16.2.0"
   },
   "dependencies": {
+    "@powsybl/network-viewer-core": "3.7.0",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

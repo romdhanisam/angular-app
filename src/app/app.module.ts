@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { themeReducer } from "@Store/reducers/theme-reducer";
 import LayoutComponent from "@Resource/layout/component";
-import {NgOptimizedImage} from "@angular/common";
 
 export const routes: Routes = [
   { path: '', component: LayoutComponent, children: [
@@ -49,7 +48,6 @@ export const routes: Routes = [
         StoreModule.forRoot({projects: projectReducer, theme: themeReducer}),
         StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
         ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-        NgOptimizedImage
     ],
   bootstrap: [AppComponent]
 })

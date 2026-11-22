@@ -1,0 +1,8 @@
+{
+  "/demo": {
+    "target": "https://raw.githubusercontent.com/powsybl/powsybl-network-viewer/main",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

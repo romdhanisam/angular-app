@@ -1,0 +1,15 @@
+:host { display: block; }
+.nad-host { height: 100%; border: 1px solid black }
+.sld-card {
+  max-width: 600px;
+}
+
+.sld-card-header-image {
+  background-image: url('https://artwork.lfenergy.org/projects/powsybl/icon/color/powsybl-icon-color.png');
+  //background-image: url('https://raw.githubusercontent.com/powsybl/.github/refs/heads/main/images/powsybl.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 20px;
+  min-height: 20px;
+}

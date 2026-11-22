@@ -36,7 +36,7 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
   templateUrl: './template.html',
   styleUrls: ['./style.scss'],
 })
-export default class LocalSettingsComponent implements OnInit{
+export default class LocalSettingsComponent implements OnInit {
   themeControl: FormControl;
   themes: TTheme[] = THEMES;
   systemTheme = 'Light';

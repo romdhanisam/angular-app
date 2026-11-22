@@ -1,1 +1,14 @@
 <hello-lib/>
+<div class="sld-flex-container">
+<!--    <mat-spinner *ngIf="loading"></mat-spinner>-->
+<!--    <ng-container *ngIf="!loading">-->
+        <ngx-powsybl-nad-viewer [svgContent]="svgContent"
+                                [metadata]="metadata"
+                                [options]="{ enableDragInteraction: true, addButtons: true }"
+                                [branchStates]="branchStates"
+                                (nodeSelect)="onSelect($event)"
+                                (nodeMove)="onMove($event)">
+        </ngx-powsybl-nad-viewer>
+        <p>selected : <strong>{{ selected }}</strong></p>
+<!--    </ng-container>-->
+</div>
