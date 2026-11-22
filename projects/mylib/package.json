@@ -1,6 +1,6 @@
 {
   "name": "@cell4rom/mylib",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Samir Romdhani",
     "email": "samir.romdhani1994@gmail.com"
@@ -20,7 +20,7 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/common": "^22.3.0"
+    "@angular/common": "^16.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
